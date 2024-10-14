@@ -20,4 +20,4 @@ ENV JWT_SECRET =$JWT_SECRET
 EXPOSE 3000
 
 # Comando para iniciar a aplicação
-CMD ["node", "src/server.js"]
+CMD ["node", "server.js"]

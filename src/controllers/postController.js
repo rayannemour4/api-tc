@@ -22,7 +22,7 @@ class postController {
     } catch (erro) {
       res
         .status(500)
-        .json({ message: `${erro.message} - falha na requisição do livro.` });
+        .json({ message: `${erro.message} - falha na requisição do post.` });
     }
   }
 
@@ -34,7 +34,7 @@ class postController {
     } catch (erro) {
       res
         .status(500)
-        .json({ message: `${erro.message} - falha ao cadastrar livro` });
+        .json({ message: `${erro.message} - falha ao cadastrar post` });
     }
   }
 

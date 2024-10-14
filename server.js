@@ -1,10 +1,18 @@
 import "dotenv/config";
-import app from "./src/app.js";
+import startServer from "./src/app.js";
 
+const PORT = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET;
 
-const PORT = 3000;
+(async () => {
+  try {
+    const app = await startServer(); // Inicia o servidor após conectar ao banco de dados
 
-app.listen(PORT, () => {
-  console.log("Servidor escutando!");
-});
+    app.listen(PORT, () => {
+      console.log(`Servidor escutando na porta ${PORT}!`);
+    });
+  } catch (error) {
+    console.error("Erro ao iniciar o servidor", error);
+    process.exit(1); // Encerra o processo em caso de erro
+  }
+})();

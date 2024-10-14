@@ -13,6 +13,9 @@ RUN npm install
 # Copiar todos os arquivos do projeto
 COPY . .
 
+ARG JWT_SECRET
+ENV JWT_SECRET =$JWT_SECRET
+
 # Expor a porta que a aplicação utiliza
 EXPOSE 3000
 

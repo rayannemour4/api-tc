@@ -1,7 +1,7 @@
 import post from "../models/post.js";
 
 class postController {
-  //Listar
+  //Listar todos os posts
   static async listarPost(req, res) {
     try {
       const listapost = await post.find({}).select("titulo autor");
@@ -51,6 +51,7 @@ class postController {
     }
   }
 
+  //Excluir Post
   static async excluirPost(req, res) {
     try {
       const _id = req.params.id;
